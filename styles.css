@@ -1,0 +1,226 @@
+
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+:root{
+    --scale: 0;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: lightgrey;
+    overflow: hidden;
+}
+
+/* These three main sections add up to 100vh */
+/* If more, check the added margins or padding */
+nav{
+    background-color: ghostwhite;
+    width: 100%;
+    height: 8vh;
+}
+
+#main-map{
+    /* 100 - 16vh - 8vh */
+    height: 76vh;
+}
+
+#bottom-menu{
+    background-color: ghostwhite;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 16vh;
+}
+
+/* Middle section styles */
+.main-container{
+    display: block;
+}
+#map-container {
+    display: flex;
+    align-items: center;
+    padding-top: 3vh;
+    height: 70%;
+    padding-bottom: 3vh;
+}
+#list-container{
+    height: 30%;
+    margin: -3vh;
+}
+
+#video-player{
+    width: 100vw;
+}
+
+.double-category{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: ghostwhite;
+    padding: 3%;
+    border-radius: 8px;
+}
+
+.double-category:first-of-type{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.double-category:nth-of-type(2){
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.destinations-list{
+    margin-left: 0;
+    padding-top: 2vh;
+    padding-left: 0;
+    font-size: 1.2em;
+}
+
+.destinations-list li{
+    padding-bottom: 0.5vh;
+}
+
+/* Interactive blocks/buildings in image */
+.landmark-block{
+    background: none;
+    position: absolute;
+    border: 3px solid black;
+}
+
+
+/* Tooltip general styles */
+.tooltip{
+    transform-origin: top center;
+    background: whitesmoke;
+    width: max-content;
+    max-width: 120%;
+    height: auto;
+    border-radius: 0.3rem;
+    text-align: center;
+    padding: 5%;
+    font-size: 0.95em;
+}
+
+/* Tooltip button styles */
+
+.tooltip .go-to-destination{
+    margin-top: 0.2vh;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    min-height: 3rem;
+    padding: 5% 35%;
+    max-width: 100%;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+
+.go-to-destination:hover,
+.go-to-destination:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.go-to-destination:hover {
+    transform: translateY(-1px);
+}
+
+.go-to-destination:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
+/* Landmark 1 and its tooltip positioning */
+#office-bldg{
+    width: 11%;
+    height: 24%;
+    top: 63%;
+    left: 44%;
+    transform: rotate(228deg);
+}
+
+#office-bldg:focus, #office-bldg:hover{
+    --scale: 1.3;
+}
+
+#office-bldg .tooltip{
+    margin-top: 12%;
+    margin-left: -47%;
+    transition: 350ms transform;
+    transform: rotate(-228deg) scale(var(--scale));
+}
+
+#office-bldg .tooltip::before{
+    content: '';
+    position: absolute;
+    /* Top set as height so its right above */
+    top: -1.85vw;
+    left: 50%;
+    /* Margin left set as half width to align in center */
+    margin-left: -1vw;
+    border: 1vw solid transparent;
+    border-bottom-color: whitesmoke;
+}
+
+/* Landmark 2 and its tooltip positioning */
+#medical-bldg{
+    width: 13%;
+    height: 29%;
+    top: 43%;
+    left: 59%;
+    transform: rotate(220deg);
+}
+
+/* Landmark 3 and its tooltip positioning */
+#community-block{
+    width: 13%;
+    height: 21%;
+    top: 30%;
+    left: 47%;
+    transform: rotate(220deg);
+}
+
