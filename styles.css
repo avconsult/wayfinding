@@ -51,6 +51,24 @@ nav img{
     height: 76vh;
 }
 
+#my-map{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#my-map .wrapper{
+    max-height: 100%;
+}
+#my-map .wrapper img{
+    max-height: 100%;
+}
+@media (min-aspect-ratio: 9/10) {
+    #my-map .wrapper {
+        height: 100%;
+    }
+}
+
 #bottom-menu{
     background-color: ghostwhite;
     position: absolute;
@@ -273,16 +291,6 @@ nav img{
     transform: rotate(220deg);
 }
 
-#modelo-wrapper{
-    display: block;
-    height: 70%;
-}
-
-#modelo-wrapper p{
-    font-size: 1.5em;
-    font-weight: 500;
-    line-height: 2;
-}
 /* Toggle switch */
 .switch-container {
     /*position: absolute;*/
