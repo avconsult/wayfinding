@@ -21,6 +21,8 @@ function closeVideo(){
     videoPlayer.style.display = 'none';
     imageMap.style.display = 'flex';
     imageMap.classList.add('animate__backInLeft');
+    videoPlayer.pause();
+    videoPlayer.currentTime = 0;
 }
 
 
