@@ -93,8 +93,15 @@ nav img{
     overflow-x: hidden;
 }
 
+.video-center{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #video-player{
-    width: 100vw;
+    max-height: 100%;
+    width: auto;
 }
 
 /* Search bar styles */
