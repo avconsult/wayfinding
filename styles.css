@@ -29,16 +29,21 @@ ul{
 body{
     height: 100vh;
     width: 100vw;
-    background-color: lightgrey;
+    background-color: #f7f6f5;
     overflow: hidden;
 }
 
 /* These three main sections add up to 100vh */
 /* If more, check the added margins or padding */
 nav{
-    background-color: ghostwhite;
+    background-color: white;
+    text-align: center;
     width: 100%;
     height: 8vh;
+}
+nav img{
+    height: 100%;
+    width: auto;
 }
 
 #main-map{
@@ -62,26 +67,69 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 3vh;
-    height: 70%;
-    padding-bottom: 3vh;
+    height: 60%;
 }
 #list-container{
-    height: 30%;
-    margin: -3vh;
+    height: 40%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #video-player{
     width: 100vw;
 }
 
+/* Search bar styles */
+.search {
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: white;
+    border: none;
+}
+.search input{
+    width: 20vw;
+    border: none;
+    font-size: 1.1em;
+}
+.searchTerm {
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus{
+    color: #00B4CC;
+}
+
+.searchButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 36px;
+    border: none;
+    background: none;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+.searchButton i{
+    color: black;
+}
+
 .double-category{
     text-align: center;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background: ghostwhite;
     padding: 3%;
     border-radius: 8px;
+    background: white;
 }
 
 .double-category:first-of-type{
@@ -108,7 +156,7 @@ nav{
 .landmark-block{
     background: none;
     position: absolute;
-    border: 3px solid black;
+    /*border: 3px solid black;*/
 }
 
 

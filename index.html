@@ -26,9 +26,7 @@
 
     <nav id="navbar">
 
-        <div class="text-area-container">
-            <textarea class="use-keyboard-input" id="search-input" style="background-color: grey" name="" id="" cols="35" rows="5"></textarea>
-        </div>
+        <img src="media/horizontal_on_white.png" alt="">
 
         <ul class="nav-list">
             <li class="nav-item"></li>
@@ -37,6 +35,7 @@
             <li class="nav-item"></li>
             <li class="nav-item"></li>
         </ul>
+
     </nav>
 
     <section id="main-map">
@@ -55,27 +54,33 @@
                     </div>
                     <div id="medical-bldg" class="landmark-block"></div>
                     <div id="community-block" class="landmark-block"></div>
-                    <img src="sample.png" usemap="#image-map">
+                    <img src="media/sample.png" usemap="#image-map">
 
                 </div>
             </div>
 
             <div class="video-center">
                 <video style="display: none" class="animate__animated" id="video-player"
-                   src="directions.mp4" type="video/mp4" controls> </video>
+                       src="media/directions.mp4" type="video/mp4" controls> </video>
             </div>
 
         </container>
 
         <container class="main-container" id="list-container">
 
-            <div class="switch-container">
+<!--            <div class="switch-container">-->
 
-                <p> 2D </p>
-                <label class="switch"><input onclick="toggle3D()" type="checkbox" />    <div></div>
-                </label>
-                <p> 3D </p>
+<!--                <p> 2D </p>-->
+<!--                <label class="switch"><input onclick="toggle3D()" type="checkbox" />    <div></div>-->
+<!--                </label>-->
+<!--                <p> 3D </p>-->
 
+<!--            </div>-->
+            <div class="search">
+                <input class="use-keyboard-input" type="text" class="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+                    <i class="material-icons"> search </i>
+                </button>
             </div>
 
             <div class="double-category">
@@ -126,7 +131,7 @@
 
     </section>
 
-    <section id="bottom-menu" style="border-top: 5px solid black">
+    <section id="bottom-menu" style="border-top: 2px solid darkgrey">
 
     </section>
 
