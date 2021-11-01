@@ -98,10 +98,21 @@ nav img{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 #video-player{
     max-height: 100%;
     width: auto;
+}
+.video-center i{
+    z-index: 10;
+    position: absolute;
+    top: 7%;
+    right: 2%;
+    font-size: 4em
+}
+#exit-video{
+    transition: opacity 3s;
 }
 
 /* Search bar styles */
