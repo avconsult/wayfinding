@@ -106,10 +106,10 @@ nav img{
     overflow-x: hidden;
 }
 #search-list{
-    height: 50%;
+    min-height: 50%;
 }
 .double-category:first-child{
-    height: 100%;
+    min-height: 100%;
 }
 .video-center{
     height: 100%;
@@ -132,6 +132,7 @@ nav img{
 }
 #exit-video{
     transition: opacity 3s;
+    cursor: pointer;
 }
 
 /* Search bar styles */
@@ -190,7 +191,7 @@ nav img{
 .double-category{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    height: 50%;
+    min-height: 50%;
 }
 #search-list .double-category{
     height: 100%;
