@@ -26,7 +26,7 @@
 
     <nav id="navbar">
 
-        <img src="media/horizontal_on_white.png" alt="">
+        <img src="media/CORE%20High%20Logo.png" alt="">
 
         <ul class="nav-list">
             <li class="nav-item"></li>
@@ -43,7 +43,7 @@
         <container class="main-container" id="map-container">
 
             <div class="animate__animated" id="my-map">
-                <div class="wrapper" style="position: relative">
+                <div onclick="resetTapGesture()" class="wrapper" style="position: relative">
 
                     <div id="office-bldg" class="landmark-block">
                         <div class="tooltip">
@@ -54,7 +54,9 @@
                     </div>
                     <div id="medical-bldg" class="landmark-block"></div>
                     <div id="community-block" class="landmark-block"></div>
-                    <img src="media/sample.png" usemap="#image-map">
+                    <img src="media/sample.png">
+                    <img id="touch-here" src="media/animation_640_kvuxwe7w.gif">
+
 
                 </div>
             </div>
@@ -79,33 +81,36 @@
 <!--                <p> 3D </p>-->
 
 <!--            </div>-->
-            <div class="search">
-                <input class="use-keyboard-input" type="text" class="searchTerm" placeholder="What are you looking for?">
-                <button type="submit" class="searchButton">
-                    <i class="material-icons"> search </i>
-                </button>
-            </div>
+            <div id="search-list">
 
-            <div class="double-category">
-
-                <div class="left-category" id="sports">
-                    <h1> Sports </h1>
-                    <ul class="destinations-list">
-                        <li> Tennis Court </li>
-                        <li> Football Field </li>
-                        <li> Gymnasium </li>
-                    </ul>
+                <div class="search">
+                    <input class="use-keyboard-input" type="text" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+                        <i class="material-icons"> search </i>
+                    </button>
                 </div>
 
-                <div class="right-catgeory" id="nutrition">
-                    <h1> Nutrition </h1>
-                    <ul class="destinations-list">
-                        <li> Cafeteria </li>
-                        <li> Dietitian </li>
-                        <li> Nutrition Lab </li>
-                    </ul>
-                </div>
+                <div class="double-category">
 
+                    <div class="left-category" id="sports">
+                        <h1> Sports </h1>
+                        <ul class="destinations-list">
+                            <li> Tennis Court </li>
+                            <li> Football Field </li>
+                            <li> Gymnasium </li>
+                        </ul>
+                    </div>
+
+                    <div class="right-catgeory" id="nutrition">
+                        <h1> Nutrition </h1>
+                        <ul class="destinations-list">
+                            <li> Cafeteria </li>
+                            <li> Dietitian </li>
+                            <li> Nutrition Lab </li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
 
             <div class="double-category">

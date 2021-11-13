@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Animate.css  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,400&display=swap" rel="stylesheet">
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="arabstyles.css">
+    <link rel="stylesheet" href="keyboard/keyboard.css">
+
+    <title>CORE Wayfinding</title>
+</head>
+<body>
+
+<nav id="navbar">
+
+    <img src="media/horizontal_on_white.png" alt="">
+
+    <ul class="nav-list">
+        <li class="nav-item"></li>
+        <li class="nav-item"></li>
+        <li class="nav-item"></li>
+        <li class="nav-item"></li>
+        <li class="nav-item"></li>
+    </ul>
+
+</nav>
+
+<section id="main-map">
+
+    <container class="main-container" id="map-container">
+
+        <div class="animate__animated" id="my-map">
+            <div class="wrapper" style="position: relative">
+
+                <div id="office-bldg" class="landmark-block">
+                    <div class="tooltip">
+                        <span> Office Building </span>
+                        <!--   Play video for this destination on click -->
+                        <button class="go-to-destination" onclick="playvideo()"> directions </button>
+                    </div>
+                </div>
+                <div id="medical-bldg" class="landmark-block"></div>
+                <div id="community-block" class="landmark-block"></div>
+                <img src="media/sample.png" usemap="#image-map">
+
+            </div>
+        </div>
+
+        <div class="video-center">
+            <video style="display: none" class="animate__animated" id="video-player"
+                   src="media/directions.mp4" type="video/mp4" controls> </video>
+            <i style="visibility: hidden" id="exit-video" class="material-icons" onclick="closeVideo()">
+                exit_to_app
+            </i>
+        </div>
+
+    </container>
+
+    <container class="main-container" id="list-container">
+
+        <!--            <div class="switch-container">-->
+
+        <!--                <p> 2D </p>-->
+        <!--                <label class="switch"><input onclick="toggle3D()" type="checkbox" />    <div></div>-->
+        <!--                </label>-->
+        <!--                <p> 3D </p>-->
+
+        <!--            </div>-->
+        <div class="search">
+            <input class="use-keyboard-input" type="text" class="searchTerm" placeholder="What are you looking for?">
+            <button type="submit" class="searchButton">
+                <i class="material-icons"> search </i>
+            </button>
+        </div>
+
+        <div class="double-category">
+
+            <div class="left-category" id="sports">
+                <h1> الرياضة </h1>
+                <ul class="destinations-list">
+                    <li> Tennis Court </li>
+                    <li> Football Field </li>
+                    <li> Gymnasium </li>
+                </ul>
+            </div>
+
+            <div class="right-catgeory" id="nutrition">
+                <h1> Nutrition </h1>
+                <ul class="destinations-list">
+                    <li> Cafeteria </li>
+                    <li> Dietitian </li>
+                    <li> Nutrition Lab </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="double-category">
+
+            <div class="left-category" id="management">
+                <h1> Management </h1>
+                <ul class="destinations-list">
+                    <li> Customer Support </li>
+                    <li> Administrator </li>
+                    <li> Security </li>
+                </ul>
+            </div>
+
+            <div class="right-catgeory" id="offices">
+                <h1> Offices </h1>
+                <ul class="destinations-list">
+                    <li> Block A </li>
+                    <li> Block B </li>
+                    <li> Block C </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </container>
+
+</section>
+
+<section id="bottom-menu" style="border-top: 2px solid darkgrey">
+
+</section>
+
+<!-- JS files -->
+<script src="app.js"></script>
+<script src="keyboard/keyboard.js"></script>
+
+</body>
+</html>

@@ -40,9 +40,12 @@ nav{
     text-align: center;
     width: 100%;
     height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 nav img{
-    height: 100%;
+    height: 80%;
     width: auto;
 }
 
@@ -51,6 +54,13 @@ nav img{
     height: 76vh;
 }
 
+#touch-here{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25%;
+    transform: translateX(-50%) translateY(-40%);
+}
 #my-map{
     height: 100%;
     display: flex;
@@ -86,13 +96,21 @@ nav img{
     align-items: center;
     justify-content: center;
     height: 60%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width: 100vw;
 }
 #list-container{
     height: 40%;
     overflow-y: scroll;
     overflow-x: hidden;
 }
-
+#search-list{
+    height: 50%;
+}
+.double-category:first-child{
+    height: 100%;
+}
 .video-center{
     height: 100%;
     display: flex;
@@ -101,7 +119,8 @@ nav img{
     position: relative;
 }
 #video-player{
-    max-height: 100%;
+    height: 100%;
+    max-width: 100vw;
     width: auto;
 }
 .video-center i{
@@ -168,13 +187,13 @@ nav img{
     background: white;
 }
 
-.double-category:first-of-type{
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+.double-category{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: 50%;
 }
-.double-category:nth-of-type(2){
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+#search-list .double-category{
+    height: 100%;
 }
 
 .destinations-list{

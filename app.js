@@ -3,6 +3,7 @@ const imageMapContainer = document.getElementById("map-container");
 const imageMap = document.getElementById("my-map");
 const videoPlayer = document.getElementById("video-player");
 const closeVideoButton = document.getElementById("exit-video");
+const tapGesture = document.getElementById("touch-here");
 
 function playvideo(){
     videoPlayer.style.display = 'block';
@@ -25,15 +26,9 @@ function closeVideo(){
     videoPlayer.currentTime = 0;
 }
 
-
-// function toggle3D(){
-//     console.log( window.getComputedStyle(imageMapContainer, null).display )
-//     if( window.getComputedStyle(imageMapContainer, null).display == 'none' ){
-//         imageMapContainer.style.display = 'flex';
-//         threeDview.style.display = 'none';
-//     } else {
-//         imageMapContainer.style.display = 'none';
-//         threeDview.style.display = 'block';
-//     }
-//
-// }
+function resetTapGesture(){
+    tapGesture.style.display = 'none';
+    setTimeout(function (){
+        tapGesture.style.display = 'block';
+    }, 60000); // show tap again after one minute
+}

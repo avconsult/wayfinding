@@ -26,7 +26,7 @@ const Keyboard = {
         this.elements.main.classList.add("keyboard", "keyboard--hidden");
         this.elements.keysContainer.classList.add("keyboard__keys");
 
-        this.elements.keysContainer.appendChild(this._createKeys());
+        this.elements.keysContainer.appendChild(this._createKeys(false));
 
         this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
 
@@ -44,7 +44,7 @@ const Keyboard = {
         }));
     },
 
-    _createKeys(){
+    _createKeys(isEnglish){
     //    CREATE DOM FRAGMENTS
         const fragment = document.createDocumentFragment();
         const keyLayout = [
@@ -58,15 +58,27 @@ const Keyboard = {
 
             "space"
         ];
+        const keyLayoutArab = [
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
 
+            "ض", "ص", "ث", "ق", "ف", "غ", "ع", "ه", "خ", "ح", "ج", "د",
+
+            "caps", "ش", "س", "ي", "ب", "ل", "ا", "ت", "ن", "م", "ك", "ط", "enter",
+
+            "done", "ئ", "ء", "ؤ", "ر", "لا", "ى", "ة", "و", "ز", "ظ", ",", ".", "?",
+
+            "space"
+        ];
     //    CREATE HTML FOR ICON
         const createIconHTML = (icon_name) => {
             return `<i class="material-icons"> ${icon_name} </i>`;
         }
 
-        keyLayout.forEach(key => {
+        let activeKeyLayout = isEnglish ? keyLayout : keyLayoutArab;
+
+        activeKeyLayout.forEach(key => {
             const keyElement = document.createElement("button");
-            const insertLineBreak = ["backspace", "p", "enter", "?"].indexOf(key) !== -1;
+            const insertLineBreak = ["backspace", "p", "enter", "?", "د"].indexOf(key) !== -1;
 
             // ADD ATTRIBUTES
             keyElement.setAttribute("type", "button");
