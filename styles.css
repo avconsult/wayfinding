@@ -43,6 +43,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #051c2c;
 }
 nav img{
     height: 80%;
@@ -104,6 +105,8 @@ nav img{
     height: 40%;
     overflow-y: scroll;
     overflow-x: hidden;
+    background: #051c2c;
+    color: white;
 }
 #search-list{
     min-height: 50%;
@@ -186,6 +189,7 @@ nav img{
     padding: 3%;
     border-radius: 8px;
     background: white;
+    background: #051c2c;
 }
 
 .double-category{
