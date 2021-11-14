@@ -4,6 +4,7 @@ const imageMap = document.getElementById("my-map");
 const videoPlayer = document.getElementById("video-player");
 const closeVideoButton = document.getElementById("exit-video");
 const tapGesture = document.getElementById("touch-here");
+const poiGrid = document.getElementById("destinations-grid");
 
 function playvideo(){
     videoPlayer.style.display = 'block';
@@ -31,4 +32,10 @@ function resetTapGesture(){
     setTimeout(function (){
         tapGesture.style.display = 'block';
     }, 60000); // show tap again after one minute
+}
+
+function showPoiGrid(){
+    poiGrid.style.display = 'grid';
+    poiGrid.classList.add("animate__fadeInUp");
+    console.log('clicked POI');
 }

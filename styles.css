@@ -392,3 +392,26 @@ nav img{
     flex-direction: column;
     align-items: center;
 }
+
+#destinations-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 0.25vw;
+    margin-top: 1vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    height: calc(80% - 1vw);
+    animation-duration: 0.5s;
+}
+.poi-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #cea176;
+    border-radius: 5px;
+}
+.poi-image{
+    width: 25%;
+}
