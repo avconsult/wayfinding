@@ -393,16 +393,17 @@ nav img{
     align-items: center;
 }
 
+#bottom-menu{
+    animation-duration: 0.8s;
+}
 #destinations-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 0.25vw;
-    margin-top: 1vw;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    height: calc(80% - 1vw);
-    animation-duration: 0.5s;
+    margin: 0.8vw;
+    height: calc(80% - 1.6vw);
+    animation-duration: 0.8s;
 }
 .poi-icon{
     display: flex;
@@ -414,4 +415,46 @@ nav img{
 }
 .poi-image{
     width: 25%;
+}
+
+#language-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 80%;
+}
+.language{
+    position: relative;
+    background: lightgrey;
+    height: 40%;
+    padding: 0.2vh 2vw;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 70vw;
+    font-size: 2em;
+    text-align: center;
+}
+.selected{
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #0E9700;
+}
+.check {
+    -webkit-appearance: none; /*hides the default checkbox*/
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;;
+    transition: 0.10s;
+    background-color: #0E9700;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    border-radius: 3px;
+    outline: none;
 }
