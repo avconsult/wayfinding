@@ -1,4 +1,3 @@
-
 const imageMapContainer = document.getElementById("map-container");
 const imageMap = document.getElementById("my-map");
 const videoPlayer = document.getElementById("video-player");
@@ -8,7 +7,7 @@ const poiGrid = document.getElementById("destinations-grid");
 const langList = document.getElementById("language-list");
 const englishDiv = langList.firstElementChild;
 const arabicDiv = langList.childNodes[3];
-console.log(arabicDiv);
+
 
 function playvideo(){
     videoPlayer.style.display = 'block';

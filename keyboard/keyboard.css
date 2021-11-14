@@ -70,3 +70,18 @@
 .keyboard__key--dark{
     background: rgba(0, 0, 0, 0.25);
 }
+
+.closebutton{
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3em;
+    font-weight: 700;
+    top: 0;
+    right: 0;
+    width: 5vw;
+    height: 5vw;
+    background: rgba(0, 0, 0, 0.4);
+}

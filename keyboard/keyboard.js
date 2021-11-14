@@ -1,9 +1,10 @@
-
+const toolBar = document.getElementById("toolbar");
 const Keyboard = {
 
     elements:{
         main: null,
         keysContainer: null,
+        closeButton: null,
         keys: []
     },
 
@@ -21,23 +22,38 @@ const Keyboard = {
     //  CREATE MAIN ELEMENTS
         this.elements.main = document.createElement("div");
         this.elements.keysContainer = document.createElement("div");
+        this.elements.closeButton = document.createElement("div");
 
     //  SETUP MAIN ELEMENTS
         this.elements.main.classList.add("keyboard", "keyboard--hidden");
         this.elements.keysContainer.classList.add("keyboard__keys");
+        this.elements.closeButton.classList.add("closebutton");
+        this.elements.closeButton.innerText = 'x';
 
-        this.elements.keysContainer.appendChild(this._createKeys(false));
+        this.elements.closeButton.addEventListener("click", () => this.close());
+
+        this.elements.keysContainer.appendChild(this._createKeys(
+            !window.location.pathname.includes('arab')
+        ));
 
         this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
 
     //   ADD TO DOM
         this.elements.main.appendChild(this.elements.keysContainer);
+        this.elements.main.appendChild(this.elements.closeButton);
         const footerSection = document.getElementById("bottom-menu");
         footerSection.appendChild(this.elements.main);
 
-    //    AUTOMATICALLY USE WITH ELTS WITH use-keyboard CLASS
+    //   AUTOMATICALLY USE WITH ELTS WITH use-keyboard CLASS
         document.querySelectorAll(".use-keyboard-input").forEach( elt =>
         elt.addEventListener("focus", () => {
+            this.open(elt.value, currentValue => {
+                    elt.value = currentValue;
+            })
+        }));
+        document.querySelectorAll(".use-keyboard-input-onclick").forEach( elt =>
+        elt.addEventListener("click", () => {
+            console.log('clicked after listener added');
             this.open(elt.value, currentValue => {
                     elt.value = currentValue;
             })
@@ -52,23 +68,23 @@ const Keyboard = {
 
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
 
-            "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
+            "a", "s", "d", "f", "g", "h", "j", "k", "l",
 
-            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
+            "z", "x", "c", "v", "b", "n", "m", "done",
 
             "space"
-        ];
+        ]; // Removed for now: "caps", ",", ".", "?",
         const keyLayoutArab = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
 
             "ض", "ص", "ث", "ق", "ف", "غ", "ع", "ه", "خ", "ح", "ج", "د",
 
-            "caps", "ش", "س", "ي", "ب", "ل", "ا", "ت", "ن", "م", "ك", "ط", "enter",
+            "ش", "س", "ي", "ب", "ل", "ا", "ت", "ن", "م", "ك", "ط",
 
-            "done", "ئ", "ء", "ؤ", "ر", "لا", "ى", "ة", "و", "ز", "ظ", ",", ".", "?",
+            "ئ", "ء", "ؤ", "ر", "لا", "ى", "ة", "و", "ز", "ظ", "done",
 
             "space"
-        ];
+        ]; // Removed for now: ",", ".", "?",
     //    CREATE HTML FOR ICON
         const createIconHTML = (icon_name) => {
             return `<i class="material-icons"> ${icon_name} </i>`;
@@ -78,7 +94,7 @@ const Keyboard = {
 
         activeKeyLayout.forEach(key => {
             const keyElement = document.createElement("button");
-            const insertLineBreak = ["backspace", "p", "enter", "?", "د"].indexOf(key) !== -1;
+            const insertLineBreak = ["backspace", "l", "p", "ط", "done", "د"].indexOf(key) !== -1;
 
             // ADD ATTRIBUTES
             keyElement.setAttribute("type", "button");
@@ -93,22 +109,24 @@ const Keyboard = {
                         this._triggerEvent("oninput");
                     });
                     break;
-                case "caps":
-                    keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
-                    keyElement.innerHTML = createIconHTML("keyboard_capslock");
-                    keyElement.addEventListener("click", () => {
-                        this._toggleCapsLock();
-                        keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
-                    });
-                    break;
-                case "enter":
-                    keyElement.classList.add("keyboard__key--wide");
-                    keyElement.innerHTML = createIconHTML("keyboard_return");
-                    keyElement.addEventListener("click", () => {
-                        this.properties.value += "/n";
-                        this._triggerEvent("oninput");
-                    });
-                    break;
+            // Removed enter for now since no sentences case insensitive search
+                // case "caps":
+                //     keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
+                //     keyElement.innerHTML = createIconHTML("keyboard_capslock");
+                //     keyElement.addEventListener("click", () => {
+                //         this._toggleCapsLock();
+                //         keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
+                //     });
+                //     break;
+            // Removed enter for now since no sentences
+                // case "enter":
+                //     keyElement.classList.add("keyboard__key--wide");
+                //     keyElement.innerHTML = createIconHTML("keyboard_return");
+                //     keyElement.addEventListener("click", () => {
+                //         this.properties.value += "/n";
+                //         this._triggerEvent("oninput");
+                //     });
+                //     break;
                 case "space":
                     keyElement.classList.add("keyboard__key--extra-wide");
                     keyElement.innerHTML = createIconHTML("space_bar");
@@ -163,7 +181,8 @@ const Keyboard = {
         this.properties.value = initialValue || "";
         this.eventHandlers.oninput = oninput;
         this.eventHandlers.onclose = onclose;
-        this.elements.main.classList.remove("keyboard--hidden");
+        this.elements.main.classList.remove("keyboard--hidden")
+        toolBar.style.display = 'none';
     },
 
     close(){
@@ -171,6 +190,7 @@ const Keyboard = {
         this.eventHandlers.onclose = onclose;
         this.eventHandlers.oninput = oninput;
         this.elements.main.classList.add("keyboard--hidden");
+        toolBar.style.display = 'flex';
     },
 
 };
