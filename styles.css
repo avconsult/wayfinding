@@ -336,7 +336,7 @@ nav img{
 }
 #destinations-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 0.25vw;
     margin: 0.8vw;
@@ -348,7 +348,7 @@ nav img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: lavender;
+    background: linear-gradient(#f1dcc2 0%, #f8ede0 100%); /* W3C */;
     border-radius: 5px;
 }
 .poi-image{

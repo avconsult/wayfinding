@@ -1,4 +1,3 @@
-const imageMapContainer = document.getElementById("map-container");
 const imageMap = document.getElementById("my-map");
 const videoPlayer = document.getElementById("video-player");
 const closeVideoButton = document.getElementById("exit-video");
