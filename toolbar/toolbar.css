@@ -17,7 +17,7 @@ body {
 .menu {
     margin: 0;
     width: 100vw;
-    height: 20%;
+    height: 25%;
     display: flex;
     font-size: 1.5em;
     padding: 0 2.85em;
@@ -60,7 +60,6 @@ body {
 
 .menu__item.active::before {
     transform: scale(1);
-
     background-color: var(--bgColorItem);
 }
 

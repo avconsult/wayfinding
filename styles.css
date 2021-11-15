@@ -133,11 +133,12 @@ nav img{
     height: 40%;
     overflow-y: scroll;
     overflow-x: hidden;
-    background: #051c2c;
+    background: #f7f6f5;
     color: white;
+    transition: background-color 0.8s;
 }
 #search-list{
-    min-height: 50%;
+    height: 50%;
 }
 
 .search {
@@ -340,7 +341,7 @@ nav img{
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 0.25vw;
     margin: 0.8vw;
-    height: calc(80% - 1.6vw);
+    height: calc(75% - 1.6vw);
     animation-duration: 0.8s;
 }
 .poi-icon{
@@ -354,6 +355,9 @@ nav img{
 .poi-image{
     width: 25%;
 }
+.toolbar-icon{
+    width: 60px;
+}
 
 #language-list{
     display: flex;
@@ -361,7 +365,7 @@ nav img{
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
-    height: 80%;
+    height: 75%;
 }
 .language{
     position: relative;

@@ -4,19 +4,29 @@ const body = document.body;
 const bgColorsBody = ["#ffb457", "#ff96bd", "#9999fb", "#ffe797", "#cffff1"];
 const menu = body.querySelector(".menu")
 const menuItems = menu.querySelectorAll(".menu__item");
-const menuBorder = menu.querySelector(".menu__border");
+const menuBorder = document.getElementById("menu-border");
 let activeItem = menu.querySelector(".active");
+
+
+function init(){
+    menuBorder.classList.remove('menu__border');
+    // activeItem.classList.remove('active');
+}
+init();
 
 function clickItem(item, index) {
     menu.style.removeProperty("--timeOut");
     if (activeItem == item) return;
 
-    if (activeItem)
+    console.log(item.id);
+    if(activeItem && item.id != 'search-icon' && item.id != 'list-icon')
         activeItem.classList.remove("active");
 
-    item.classList.add("active");
-    activeItem = item;
-    offsetMenuBorder(activeItem, menuBorder);
+    if(item.id != 'search-icon' && item.id != 'list-icon') {
+        item.classList.add("active");
+        activeItem = item;
+        offsetMenuBorder(activeItem, menuBorder);
+    }
 }
 
 function offsetMenuBorder(element, menuBorder) {

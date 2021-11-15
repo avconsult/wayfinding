@@ -1,12 +1,22 @@
 const imageMap = document.getElementById("my-map");
+
 const videoPlayer = document.getElementById("video-player");
 const closeVideoButton = document.getElementById("exit-video");
+
 const tapGesture = document.getElementById("touch-here");
+
 const poiGrid = document.getElementById("destinations-grid");
+
 const langList = document.getElementById("language-list");
 const englishDiv = langList.firstElementChild;
 const arabicDiv = langList.childNodes[3];
 
+const searchList = document.getElementById("search-list");
+const secondList = document.getElementsByClassName('double-category')[1];
+const mediaDiv = document.getElementById("media-div");
+const listContainer = document.getElementById("list-container");
+
+const toolBar = document.getElementById('toolbar');
 
 function playvideo(){
     videoPlayer.style.display = 'block';
@@ -58,4 +68,24 @@ function changeToArabic(){
     setTimeout(function () {
         window.location.href = "arabic/arabindex.html";
     }, 100)
+}
+
+function showTextList(){
+    mediaDiv.style.display = 'none';
+    searchList.style.display = 'block';
+    secondList.style.display = 'grid';
+    searchList.classList.add('animate__slideInRight');
+    secondList.classList.add('animate__slideInRight');
+
+    let listButton = toolBar.getElementsByTagName('button')[2];
+    listButton.style.display='none';
+
+    setTimeout( () => {
+        searchList.style.display = 'none';
+        secondList.style.display ='none';
+        mediaDiv.style.display = 'block';
+        mediaDiv.classList.add('animate__slideInLeft');
+        listButton.style.display = 'flex';
+        listButton.classList.remove('active');
+    }, 3000)
 }

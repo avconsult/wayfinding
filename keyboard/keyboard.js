@@ -1,5 +1,5 @@
-const toolBar = document.getElementById("toolbar");
 const searchBar = document.getElementById("search-bar");
+
 const Keyboard = {
 
     elements:{
@@ -54,6 +54,8 @@ const Keyboard = {
         }));
         document.querySelectorAll(".use-keyboard-input-onclick").forEach( elt =>
         elt.addEventListener("click", () => {
+            if(searchList.style.display == 'none')
+                showTextList(); // defined in app.js
             searchBar.focus();
             this.open(searchBar.value, currentValue => {
                     searchBar.value = currentValue;
