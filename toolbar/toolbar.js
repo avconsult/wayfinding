@@ -18,7 +18,6 @@ function clickItem(item, index) {
     menu.style.removeProperty("--timeOut");
     if (activeItem == item) return;
 
-    console.log(item.id);
     if(activeItem && item.id != 'search-icon' && item.id != 'list-icon')
         activeItem.classList.remove("active");
 

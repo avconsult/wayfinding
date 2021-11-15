@@ -1,8 +1,18 @@
+@font-face {
+    font-family: TSTAR;
+    src: url("font/TSTAR-PRO-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: TSTAR;
+    font-weight: bold;
+    src: url("font/TSTAR-PRO-Bold.otf") format("opentype");
+}
 html, body{
     height: 100%;
     width: 100%;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'TSTAR', sans-serif;
 }
 
 :root{
@@ -146,11 +156,12 @@ nav img{
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     background: white;
     border: none;
 }
 .search input{
-    width: 20vw;
+    width: 30vw;
     border: none;
     font-size: 1.1em;
 }
@@ -190,7 +201,6 @@ nav img{
     grid-template-columns: repeat(2, 1fr);
     padding: 3%;
     background: #051c2c;
-    border-radius: 0 0 8px 8px;
     min-height: 50%;
 }
 .double-category:first-child{
@@ -356,7 +366,7 @@ nav img{
     width: 25%;
 }
 .toolbar-icon{
-    width: 60px;
+    width: 50px;
 }
 
 #language-list{
@@ -390,7 +400,8 @@ nav img{
     height: 50px;
     width: 50px;
     position: absolute;
-    top: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 20px;;
     transition: 0.10s;
     background-color: #0E9700;

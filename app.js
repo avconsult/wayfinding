@@ -87,5 +87,5 @@ function showTextList(){
         mediaDiv.classList.add('animate__slideInLeft');
         listButton.style.display = 'flex';
         listButton.classList.remove('active');
-    }, 3000)
+    }, 10000)
 }
